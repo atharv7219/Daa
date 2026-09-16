@@ -1,34 +1,25 @@
 #include <stdio.h>
-int main()
-{
-int n;
-printf("Enter size of the array");
-scanf("%d",&n);
-int arr[n];
 
-int i,j;
-printf("Enter unique  elements of the array");
-for(i=0;i<n;i++)
-{
-    scanf("%d",&arr[i]);
-}
-int x,m,o;
-printf("Enter target element");
-scanf("%d",&x);
+int main() {
+    int a[10], i, j, count;
 
-for(i=0;i<n;i++)
-{
-    for(j=i+1;j<n;j++)
-    {
-        if((arr[i]+arr[j])==x)
-        {
-            m=i;
-            o=j;
-            break;
-        }
+    printf("Enter array elements:");
+
+    for(i = 0; i < 10; i++) {
+        scanf("%d", &a[i]);
     }
-}
-printf("%d %d",m,o);
 
+    for(i = 0; i < 10; i++) {
+        count = 0;
 
+        for(j = 0; j < 10; j++) {
+            if(a[i] == a[j]) {
+                count++;
+            }
+        }
+
+        printf("%d occurs %d times", a[i], count);
+    }
+
+    return 0;
 }
